@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>History Dungeon</title>
+        <meta name="description" content="Um sistema de Histórias de varios finais, inspirados em AI Dungeon, e demais jogos de Navegador">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Imports -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <!-- Style -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Pagina Sobre</a></li>
+                    <li><a href="#">Fonte</a></li>
+                    <li><a href="#">Criador</a></li>
+                </ul>
+            </nav>
+
+
+        </header>
+        <main>
+            <div id="selecionadorDeHistoria">
+                <select id="selecionarHistoria">
+                    <option value="historia1">História 1</option>
+                    <option value="historia2">historia 2</option>
+                    <option value="historia3">historia 3</option>
+                    <option value="historia4">historia 4</option>
+                </select>
+                <input id="nomeDoJogador"   type="text" placeholder="Nome Do Jogador">
+                <button id="enviarHistoria">Selecionar</button>
+            </div>
+            <div id="saidaHistoria" class="esconder">
+                <h1 id="nomeDaHistoria">História 1</h1>
+                <p class="mensagemJogador">Olá</p>
+                <p class="mensagemSistema">Olá históriador :)</p>
+            </div>
+            <div id="opcoesDeEntrada" class="opcoesDeEntrada esconder">
+                <button id="opcao1">Opção 1</button>
+                <button id="opcao2">Opção 2</button>
+                <button id="opcao3">Opção 3</button>
+                <button id="opcao4">Opção 4</button>
+                <button id="enviarOpcao">Enviar :)</button>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>

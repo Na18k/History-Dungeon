@@ -1,0 +1,53 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+html {
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    color: white;
+}
+
+/* selecionar História */
+#selecionarHistoria, #nomeDoJogador {
+    padding: 6px;
+    font-size: 1.1em;
+}
+
+/* História */
+
+.mensagemJogador {
+    color: rgb(252, 252, 151);
+}
+.mensagemSistema {
+    color: lightgray;
+}
+
+/* Opções */
+.opcoesDeEntrada {
+    display: flex;
+    flex-direction: column;
+}
+.opcoesDeEntrada button {
+    border: none;
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: transparent;
+    color: white;
+    border: 2px double rgba(211, 211, 211, 0.159);
+}
+#enviarOpcao {
+    color: green;
+    width: 20%;
+}
+.opcoesDeEntrada button:hover {
+    border-color: white;
+}
+opcoesDeEntrada button:active {
+    border-color: yellow;
+}
+
+/* Alto nível de prioridade */
+.esconder {
+    display: none;
+    visibility: none;
+}
