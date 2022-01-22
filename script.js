@@ -14,6 +14,12 @@
 
     var opcaoSelecionadaMostrar = document.getElementById("opcaoSelecionadaMostrar");
 
+
+    // ======================================== -- // | -- + ~ < > ~ + -- | \\ -- ========================================
+
+
+    // Dados//Mensagens;
+    
     var mensagens = [
         // Tudo é alteravel exceto os "Links" não os altere de forma alguma!
         hitoria1 = {
@@ -26,7 +32,7 @@
             opcoes : [
                 desistir = {
                     linkDaOpcao : 0,
-                    respostaDesistir: "Você desistiu da história, espero que possa achar outra interessante ao longo do caminho ;-)"
+                    respostaDesistir: "Você desistiu da história, espero que possa achar outra interessante ao longo do caminho :)"
                 }, 
                 opcaoA0 = {
                     linkDaOpcao: 1,
@@ -42,7 +48,7 @@
                         resposta2: "Você foi chamado pelo rei, para um assunto importante de estremo sigilo pelo que eu soube.",
                         link2 : "b2", // Linkado com B2
     
-                        resposta3: "Não posso falar muito, aqui é proibido falar sobre esse reino, então nem se quer nomeiam o nome, para que o mesmo sejá esquecido. Mas se que saber, só saiba que é contado por aí quue era um reino cruel, e sombrio, possuia criaturas magicas e tudo mais, e muitos monstros, e era governado por um tirano, que destruia tudo que não fosse de seu reino. É só isso que posso dizer, você precisa ir de encontro com o rei logo, ele o aguarda.",
+                        resposta3: "Não posso falar muito, aqui é proibido falar sobre esse reino, então nem se quer nomeiam o nome, para que o mesmo sejá esquecido. Mas se que saber, só saiba que é contado por aí que era um reino cruel, e sombrio, possuia criaturas magicas e tudo mais, e muitos monstros, e era governado por um tirano, que destruia tudo que não fosse de seu reino. É só isso que posso dizer, você precisa ir de encontro com o rei logo, ele o aguarda.",
                         link3: "b3", // Linkado com B3
     
                         resposta4: "desistiu da História",
@@ -65,7 +71,7 @@
                         resposta2: "Você foi chamado pelo rei, para um assunto importante de estremo sigilo pelo que eu soube.",
                         link2 : "b2", // Linkado com B2
     
-                        resposta3: "Não posso falar muito, aqui é proibido falar sobre esse reino, então nem se quer nomeiam o nome, para que o mesmo sejá esquecido. Mas se que saber, só saiba que é contado por aí quue era um reino cruel, e sombrio, possuia criaturas magicas e tudo mais, e muitos monstros, e era governado por um tirano, que destruia tudo que não fosse de seu reino. É só isso que posso dizer, você precisa ir de encontro com o rei logo, ele o aguarda.",
+                        resposta3: "Não posso falar muito, aqui é proibido falar sobre esse reino, então nem se quer nomeiam o nome, para que o mesmo sejá esquecido. Mas se que saber, só saiba que é contado por aí que era um reino cruel, e sombrio, possuia criaturas magicas e tudo mais, e muitos monstros, e era governado por um tirano, que destruia tudo que não fosse de seu reino. É só isso que posso dizer, você precisa ir de encontro com o rei logo, ele o aguarda.",
                         link3: "b3", // Linkado com B3
     
                         resposta4: "desistiu da História",
@@ -75,8 +81,21 @@
 
                 }
             ]
+        },
+        historia2 = {
+            nomeDaHistoria : "História 2",
+            descricao: "Sem informações no momento, essa história é para teste!!!",
+            criador: "Kainan H.",
+            tempoEstimado: "0 segundos",
+            mensagemInicial : "Essa história ainda não existe:)",
         }
     ];
+
+
+    // ======================================== -- // | -- + ~ < > ~ + -- | \\ -- ========================================
+
+
+    // Variaveis principais.
 
     var historiaSelecionada = 0;
     let linkSelecionado = "1";
@@ -85,6 +104,12 @@
 
     var nomeDaHistoriaSelecionada = "Nenhuma Selecionada"
     var saidaHistoriaAnterior = ``;
+
+
+
+    // ======================================== -- // | -- + ~ < > ~ + -- | \\ -- ========================================
+
+
 
     function mudaOpcoes(historia, opcao) {
 
@@ -103,14 +128,9 @@
         opcao2Saida.textContent = `2: ${mensagens[x].opcoes[y].opcao2}`;
         opcao3Saida.textContent = `3: ${mensagens[x].opcoes[y].opcao3}`;
         opcao4Saida.textContent = `4: ${mensagens[x].opcoes[y].opcao4}`;
-    }
+    };
 
-    // =====================
-    //
-    //      Estetica 
-    //
-    // =====================
-    enviarHistoria.onclick = function() {
+    function inteligenciaCentral() {
 
         var selecionarHistoria = document.getElementById("selecionarHistoria").value;
         nomeDoJogador = document.getElementById("nomeDoJogador").value;
@@ -155,8 +175,7 @@
             <br>
         `;
 
-        if(historiaSelecionada == 0) {
-            saidaHistoria.innerHTML = `
+        saidaHistoria.innerHTML = `
             ${saidaHistoriaAnterior}
             <p class="descricao">Descrição: ${mensagens[historiaSelecionada].descricao}</p>
             <p class="descricao">Criado por: ${mensagens[historiaSelecionada].criador}</p>
@@ -164,17 +183,39 @@
             <br>
             <p class="mensagemSistema">${mensagens[historiaSelecionada].mensagemInicial}</p>
         `;
-            saidaHistoriaAnterior += `
+        saidaHistoriaAnterior += `
             <p class="descricao">Descrição: ${mensagens[historiaSelecionada].descricao}</p>
             <p class="descricao">Criado por: ${mensagens[historiaSelecionada].criador}</p>
             <p class="descricao">Tempo estimado: ${mensagens[historiaSelecionada].tempoEstimado}</p>
             <br>
             <p class="mensagemSistema">${mensagens[historiaSelecionada].mensagemInicial}</p>
-            `;
+        `;
             
-            mudaOpcoes(historiaSelecionada, idDoLinkSelecionado);
-        }
+        mudaOpcoes(historiaSelecionada, idDoLinkSelecionado);
+
+        escolhidoHistoria = true;
     };
+
+    // Execução da Inteligencia Central
+
+    // Executar com Enter (keyCode: 13).
+    function leDoTeclado(evento) {
+
+        if(evento.keyCode == 13 && escolhidoHistoria == false) {
+        	inteligenciaCentral();
+            escolhidoHistoria = true;
+        }
+    }
+    document.onkeydown = leDoTeclado;
+
+    // Executa com clique no botão
+    enviarHistoria.onclick = inteligenciaCentral;
+
+
+
+    // ======================================== -- // | -- + ~ < > ~ + -- | \\ -- ========================================
+
+
 
     // =====================
     //
@@ -285,11 +326,13 @@
         };
         if(opcaoSelecionada !== "desistir"){
             mudaOpcoes(historiaSelecionada, idDoLinkSelecionado);
+
         } else if(opcaoSelecionada == "desistir") {
             opcoesDeEntrada.textContent = "";
             opcoesDeEntrada.innerHTML = `<a href="index.html" class="textoLink">Pagina Inicial</a>`;
 
         }
+        opcaoSelecionada = 0;
     };
 
     enviarOpcao.onclick = nucleoDeHistoria;

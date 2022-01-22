@@ -73,22 +73,28 @@ header nav ul li a:hover {
     padding: 20px;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 #selecionarHistoria, #nomeDoJogador,  #enviarHistoria {
     padding: 6px;
     font-size: 1.1em;
     outline: none;
+    margin-top: 20px;
 }
-
 /* História */
 #nomeDaHistoria {
     font-size: 2em;
 }
 .mensagemJogador {
+    font-size: 0.8em;
+
     color: rgb(252, 252, 151);
     margin-top: 8px;
 }
 .mensagemSistema {
+    font-size: 0.8em;
+
     color: lightgray;
     margin-top: 8px;
 }
