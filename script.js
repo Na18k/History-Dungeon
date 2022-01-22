@@ -1,3 +1,5 @@
+    // Import
+    
     var selecionadorDeHistoria = document.getElementById("selecionadorDeHistoria");
     var enviarHistoria = document.getElementById("enviarHistoria");
     var nomeDaHistoria = document.getElementById("nomeDaHistoria");
@@ -19,7 +21,7 @@
 
 
     // Dados//Mensagens;
-    
+
     var mensagens = [
         // Tudo é alteravel exceto os "Links" não os altere de forma alguma!
         hitoria1 = {

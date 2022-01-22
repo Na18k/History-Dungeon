@@ -131,6 +131,46 @@ header nav ul li a:hover {
     justify-content: space-around;
 }
 
+/* MOBILE */
+@media(max-width: 768px) {
+    header {
+        margin-top: 20px;
+    }
+    nav ul li {
+        flex-wrap: wrap;
+        width: 30%;
+        margin: 0 10px 0 10px;
+        align-items: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    #selecionarHistoria, #nomeDoJogador {
+        width: 98%;
+    }
+    .mensagemJogador,
+    .mensagemSistema,
+    #enviarOpcao,
+    .opcoesDeEntrada,
+    #opcao1,
+    #opcao2,
+    #opcao3,
+    #opcao4 {
+        font-size: 0.7em;
+        line-height: 1.2em;
+    }
+    .descricao {
+        font-size: 0.6em;
+    }
+}
+
+
+
+
+
+
+
+
 /* Alto nível de prioridade */
 .esconder {
     display: none;
