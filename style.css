@@ -6,20 +6,91 @@ html {
     background-color: black;
     color: white;
 }
+body {
+    padding: 0 10px;
+}
+.fixado {
+    position: fixed;
+}
+.aviso {
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.8em;
+}
+.aviso p {
+    text-align: center;
+    background-image: linear-gradient(black 70%, transparent);
+    padding: 10px;
+    width: 100%;
+}
+.descricao {
+    color: lightgray;
+    margin: 4px;
+}
+.descricao:before {
+    content: "| ";
+}
+.textoLink {
+    color: purple;
+    font-size: 0.8em;
+    text-decoration: none;
+    text-align: center;
+    margin: 20px 0 10px 0;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+}
+.textoLink:hover {
+    color: rebeccapurple;
+}
+
+
+/* Header */
+header {
+    padding: 10px;
+}
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+header nav ul li {
+    list-style: none;
+}
+header nav ul li a {
+    color: purple;
+    font-size: 0.8em;
+    text-decoration: none;
+    text-align: center;
+}
+header nav ul li a:hover {
+    color: rebeccapurple;
+}
+
 
 /* selecionar História */
-#selecionarHistoria, #nomeDoJogador {
+.selecionadorDeHistoria {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+#selecionarHistoria, #nomeDoJogador,  #enviarHistoria {
     padding: 6px;
     font-size: 1.1em;
+    outline: none;
 }
 
 /* História */
-
+#nomeDaHistoria {
+    font-size: 2em;
+}
 .mensagemJogador {
     color: rgb(252, 252, 151);
+    margin-top: 8px;
 }
 .mensagemSistema {
     color: lightgray;
+    margin-top: 8px;
 }
 
 /* Opções */
@@ -37,13 +108,21 @@ html {
 }
 #enviarOpcao {
     color: green;
-    width: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .opcoesDeEntrada button:hover {
     border-color: white;
 }
-opcoesDeEntrada button:active {
+.opcoesDeEntrada button:active {
     border-color: yellow;
+}
+
+.botaoEnviarContainer {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Alto nível de prioridade */

@@ -1,0 +1,27 @@
+Detalhes -------------------
+Título:
+Criador: Kainan Henrique C. dos Santos
+Descrição:
+Tempo estimado: -
+----------------------------
+
+Olá viajante, bem-vindo a Valácia, com sua grandeza em castelos luxuosos, e uma população rica em sua maioria, estradas
+feitas de pedra, muralhas rodeando o castelo e o restante do reino, mas nem tudo são flores, esse mesmo reino tem um 
+passado sombrio com Insônia, um reino ao sul que foi um grande rival de Valácia, por longos 350 anos, até que o reino a
+sua frente o extinguiu por completo nas regiões sul, sendo sempre marcado por batalhas gigantes, e em sua maioria sangrentas
+ou feitas, a través de jogos entre guerreiros lendarios;
+Isso foi um pouco de Valácia. :)
+
+Opção A1: Me conte mais sobre Valácia. 
+	Não preciso contar muito mais coisas, você terá muito ver ao adentrar os muros desse reino, sem falar que o povo
+	adora contar as histórias sobre tudo o que aconteceu; porque acabaria com a graça dessa aventura de curiosidade que
+	você pode ter.
+Opção A2: Por que estou aqui?
+	Você foi chamado pelo rei, para um assunto importante de estremo sigilo pelo que eu soube.
+Opção A3: Me fale sobre Insônia.
+	Não posso falar muito, aqui é proibido falar sobre esse reino, então nem se quer nomeiam o nome, para que o mesmo
+	sejá esquecido. Mas se que saber, só saiba que é contado por aí quue era um reino cruel, e sombrio, possuia criaturas
+	magicas e tudo mais, e muitos monstros, e era governado por um tirano, que destruia tudo que não fosse de seu reino.
+	É só isso que posso dizer, você precisa ir de encontro com o rei logo, ele o aguarda.
+Opção: A4: Desistir da História
+	Você desistiu da história, espero que possa achar outra interessante ao longo do caminho ;-)
