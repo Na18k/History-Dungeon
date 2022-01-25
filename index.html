@@ -14,6 +14,7 @@
         <!-- Style -->
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="audioControler/audioControler.css">
     </head>
     <body>
         <div class="aviso">
@@ -41,8 +42,15 @@
             </div>
             <div id="saidaHistoria" class="esconder">
                 <h1 id="nomeDaHistoria">História 1</h1>
-                <!-- <p class="mensagemSistema">Olá históriador :)</p>
+                <!-- <div class="mensagemSistemaContainer">
+                    <div>
+                        <img src="img/personagens/desconhecido.png" alt="">
+                        <h2>Desconhecido</h2>
+                    </div>
+                    <p class="mensagemSistema">Olá históriador :)</p>
+                </div>
                 <p class="mensagemJogador">Olá</p> -->
+                
             </div>
             <div id="opcoesDeEntrada" class="opcoesDeEntrada esconder">
                 <button id="opcao1">Opção 1</button>
@@ -51,11 +59,24 @@
                 <button id="opcao4">Opção 4</button>
                 <button id="enviarOpcao" class="econder"><p>Enviar :)</p><p id="opcaoSelecionadaMostrar"> Opção selecionada: 1</p></button>
             <div>
+            <!-- <audio src="music/musicBackgroudPrincipal.mp3" allow="autoplay"></audio> -->
+            <div class="audioContolerContainer">
+                <h3 class="tituloDaMusica" id="tituloDaMusica">Audio</h3>
+                <div class="audioControler">
+                    <audio id="audioMusica" src="music/music5.mp3"></audio>
+                    <button id="audioMusicaPlay">Play</button>
+                    <button id="audioMusicaPause">Pause</button>
+                    <button id="audioMusicaLoop">Loop (Sim)</button>
+                    <button id="muteMusica">Mute (Não)</button>
+                    <button id="mudarMusica">Próxima => </button>
+                </div>
+            </div>
         </main>
         <footer>
 
         </footer>
         
         <script src="script.js" async defer></script>
+        <script src="audioControler/audioControler.js"></script>
     </body>
 </html>

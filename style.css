@@ -86,14 +86,39 @@ header nav ul li a:hover {
 #nomeDaHistoria {
     font-size: 2em;
 }
+.mensagemJogadorContainer, .mensagemSistemaContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mensagemJogadorContainer div, .mensagemSistemaContainer div {
+    padding: 10px 0 10px 0;
+    width: 10%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.mensagemJogadorContainer div img, .mensagemSistemaContainer div img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 4px;
+}
+.mensagemJogadorContainer div h2, .mensagemSistemaContainer div h2 {
+    font-size: 0.6em;
+}
 .mensagemJogador {
+    width: 90%;
     font-size: 0.8em;
+    line-height: 1.4em;
 
     color: rgb(252, 252, 151);
     margin-top: 8px;
 }
 .mensagemSistema {
     font-size: 0.8em;
+    line-height: 1.4em;
 
     color: lightgray;
     margin-top: 8px;

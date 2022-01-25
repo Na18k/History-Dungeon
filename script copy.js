@@ -19,6 +19,39 @@
 
     // ======================================== -- // | -- + ~ < > ~ + -- | \\ -- ========================================
 
+    var personagens = [
+        historia1 = {
+            personagens : [
+                personagen1 = {
+                    nomeDoPersonagem: "Kainan",
+                    imagemDoPersonagem: "./img/personagens/personagemPrincipal.png",
+                    lvl: 0, // Quantos leveis ele dá ao falar com ele;
+                    hp: 100, // Quando de vida ele possui
+                    // batalha: false, // Se "False" não possui batalha, se "true" possui batalha
+                    dano: 5, // O quanto de dano ele dá por ataque
+                    tipo: "amigo", // Tipos: "amigo", "neutro", "inimigo", "desconhecido"
+                },
+                personagen2 = {
+                    nomeDoPersonagem: "Desconhecido",
+                    imagemDoPersonagem: "./img/personagens/desconhecido.png",
+                    lvl: 0, // Quantos leveis ele dá ao falar com ele;
+                    hp: undefined, // Quando de vida ele possui
+                    // batalha: false, // Se "False" não possui batalha, se "true" possui batalha
+                    dano: undefined, // O quanto de dano ele dá por ataque
+                    tipo: "desconhecido", // Tipos: "amigo", "neutro", "inimigo"
+                },
+                personagen3 = {
+                    nomeDoPersonagem: "Camponês Richard",
+                    imagemDoPersonagem: "./img/personagens/campones.png",
+                    lvl: 1, // Quantos leveis ele dá ao falar com ele;
+                    hp: 100, // Quando de vida ele possui
+                    // batalha: false, // Se "False" não possui batalha, se "true" possui batalha
+                    dano: 0, // O quanto de dano ele dá por ataque
+                    tipo: "neutro", // Tipos: "amigo", "neutro", "inimigo", "desconhecido"
+                }
+            ]
+        }
+    ]
 
     // Dados//Mensagens;
 
@@ -45,25 +78,36 @@
                     opcao4 : "Desistir desta história.",
                     respostas: {
                         resposta1: "Não preciso contar muito mais coisas, você terá muito ver ao adentrar os muros desse reino, sem falar que o povo adora contar as histórias sobre tudo o que aconteceu; porque acabaria com a graça dessa aventura de curiosidade que você pode ter.",
-                        npc1: null,
-                        musica1: null,
-                        hp: 0,
-                        lvl: 0,
                         link1 : "b1",// Linkado com B1
                         
+                        npc1: "Desconhecido",
+                        musica1: 0,
+                        adicionaHP1: 0,
+                        dano1: 0,
+                        adicionaLVL1: 0,
+                        custoDeCoins1: 0,
+                        
                         resposta2: "Você foi chamado pelo rei, para um assunto importante de estremo sigilo pelo que eu soube.",
-                        npc2: null,
-                        musica1: null,
                         link2 : "b2", // Linkado com B2
+
+                        npc2: "Desconhecido",
+                        musica2: 0,
+                        adicionaHP2: 0,
+                        dano2: 0,
+                        adicionaLVL2: 0,
+                        custoDeCoins2: 0,
     
                         resposta3: "Não posso falar muito, aqui é proibido falar sobre esse reino, então nem se quer nomeiam o nome, para que o mesmo sejá esquecido. Mas se que saber, só saiba que é contado por aí que era um reino cruel, e sombrio, possuia criaturas magicas e tudo mais, e muitos monstros, e era governado por um tirano, que destruia tudo que não fosse de seu reino. É só isso que posso dizer, você precisa ir de encontro com o rei logo, ele o aguarda.",
-                        npc3: null,
-                        musica1: null,
                         link3: "b3", // Linkado com B3
+
+                        npc3: "Desconhecido",
+                        musica3: 0,
+                        adicionaHP3: 0,
+                        dan3: 0,
+                        adicionaLVL3: 0,
+                        custoDeCoins3: 0,
     
                         resposta4: "desistiu da História",
-                        npc4: null,
-                        musica1: null,
                         link4: "desistir", // Linkado com Desistir
     
                     },
@@ -119,6 +163,7 @@
 
     var hp = 200;
     var lvl = 0;
+    var coins = 100;
 
 
 
@@ -270,15 +315,57 @@
     //     };
     // }
 
+    function encontraPersonagem(nome) {
+        for(let i = 0; i < personagens[historiaSelecionada].personagens.length; i++) {
+
+            if(nome == personagens[historiaSelecionada].personagens[i].nomeDoPersonagem) {
+                return i;
+            }
+        }
+    }
+
     function nucleoDeHistoria() {
 
         if(opcaoSelecionada == 1) {
 
-            saidaHistoria.innerHTML = `
-            ${saidaHistoriaAnterior}
-            <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao1}</p>
-            <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta1}</p>
-            `
+            if(mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.npc1 == null) {
+                saidaHistoria.innerHTML = `
+                ${saidaHistoriaAnterior}
+                <div class="mensagemJogadorContainer">
+                    <div>
+                        <img src="${personagens[historiaSelecionada].personagens[0].imagemDoPersonagem}">
+                        <h2>${personagens[historiaSelecionada].personagens[0].nomeDoPersonagem}</h2>
+                    </div>
+                    <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao1}</p>
+                </div>
+
+                <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta1}</p>
+                `
+            } else {
+
+                nomeDoNPC = mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.npc1;
+                idDoNPC = encontraPersonagem(nomeDoNPC);
+
+                saidaHistoria.innerHTML = `
+                ${saidaHistoriaAnterior}
+                <div class="mensagemJogadorContainer">
+                    <div>
+                        <img src="${personagens[historiaSelecionada].personagens[0].imagemDoPersonagem}">
+                        <h2>${personagens[historiaSelecionada].personagens[0].nomeDoPersonagem}</h2>
+                    </div>
+                    <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao1}</p>
+                </div>
+
+                <div class="mensagemSistemaContainer">
+                    <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta1}</p>
+                    <div>
+                        <img src="${personagens[historiaSelecionada].personagens[idDoNPC].imagemDoPersonagem}">
+                        <h2>${personagens[historiaSelecionada].personagens[idDoNPC].nomeDoPersonagem}</h2>
+                    </div>
+                </div>
+                `
+            }
+            
             saidaHistoriaAnterior += `
             <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao1}</p>
             <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta1}</p>
