@@ -4,9 +4,11 @@
     var enviarHistoria = document.getElementById("enviarHistoria");
     var nomeDaHistoria = document.getElementById("nomeDaHistoria");
     var nomeDoJogador = document.getElementById("nomeDoJogador").value;
+    var avisoDeFaltaDeNome = document.getElementById("avisoDeFaltaDeNome");
 
     var saidaHistoria = document.getElementById("saidaHistoria");
-    
+
+    var stats = document.getElementById("stats")
     var opcoesDeEntrada = document.getElementById("opcoesDeEntrada");
     var opcao1Saida = document.getElementById("opcao1");
     var opcao2Saida = document.getElementById("opcao2");
@@ -31,6 +33,20 @@
             tempoEstimado: "sem informações",
             mensagemInicial : "Olá viajante, bem-vindo a Valácia, com sua grandeza em castelos luxuosos, e uma população rica em sua maioria, estradas feitas de pedra, muralhas rodeando o castelo e o restante do reino, mas nem tudo são flores, esse mesmo reino tem um passado sombrio com Insônia, um reino ao sul que foi um grande rival de Valácia, por longos 350 anos, até que o reino a sua frente o extinguiu por completo nas regiões sul, sendo sempre marcado por batalhas gigantes, e em sua maioria sangrentas ou feitas, a través de jogos entre guerreiros lendarios; Isso foi um pouco de Valácia. :)",
             
+            creditos: {
+                criador: "Kainan H. [Na18k]",
+                diretor: "Kainan H",
+                imagens: [
+                    "Kainan H.",
+                    "PixelArt"
+                ],
+                musicas: [
+                    "musica 1: Nã18 Kainan H."
+                ],
+                agradecimentos: [
+                    ""
+                ]
+            },
             opcoes : [
                 desistir = {
                     linkDaOpcao : 0,
@@ -119,6 +135,7 @@
 
     var hp = 200;
     var lvl = 0;
+    var coins = 100;
 
 
 
@@ -144,11 +161,23 @@
         opcao3Saida.textContent = `3: ${mensagens[x].opcoes[y].opcao3}`;
         opcao4Saida.textContent = `4: ${mensagens[x].opcoes[y].opcao4}`;
     };
+    function statsAtualizar(HP, LVL, COINS) {
+        elementoHP = document.getElementById("hp");
+        elementoLVL = document.getElementById("lvl");
+        elementoCOINS = document.getElementById("coins");
+
+        elementoHP.textContent = `HP: ${HP}`;
+        elementoLVL.textContent = `Level: ${LVL}`;
+        elementoCOINS.textContent = `Coins: ${COINS}`;
+    }
 
     function inteligenciaCentral() {
 
         var selecionarHistoria = document.getElementById("selecionarHistoria").value;
         nomeDoJogador = document.getElementById("nomeDoJogador").value;
+
+        if(nomeDoJogador !== "") {
+
         selecionadorDeHistoria.classList.add("esconder");
         selecionadorDeHistoria.classList.remove("aparecer");
 
@@ -157,6 +186,9 @@
 
         opcoesDeEntrada.classList.remove("esconder");
         opcoesDeEntrada.classList.add("aparecer");
+
+        stats.classList.remove("esconder");
+        stats.classList.add("aparecer");
 
         if(selecionarHistoria == "historia1") {
 
@@ -186,9 +218,9 @@
         // Setar nome da História
         saidaHistoriaAnterior = `
             <h1 id="nomeDaHistoria">${nomeDaHistoriaSelecionada}</h1>
-            <p class="mensagemSistema">Olá históriador :)</p>
             <br>
         `;
+        // <p class="mensagemSistema rodarAnimacao">Olá históriador :)</p>
 
         saidaHistoria.innerHTML = `
             ${saidaHistoriaAnterior}
@@ -196,7 +228,7 @@
             <p class="descricao">Criado por: ${mensagens[historiaSelecionada].criador}</p>
             <p class="descricao">Tempo estimado: ${mensagens[historiaSelecionada].tempoEstimado}</p>
             <br>
-            <p class="mensagemSistema">${mensagens[historiaSelecionada].mensagemInicial}</p>
+            <p class="mensagemSistema rodarAnimacao">${mensagens[historiaSelecionada].mensagemInicial}</p>
         `;
         saidaHistoriaAnterior += `
             <p class="descricao">Descrição: ${mensagens[historiaSelecionada].descricao}</p>
@@ -209,6 +241,15 @@
         mudaOpcoes(historiaSelecionada, idDoLinkSelecionado);
 
         escolhidoHistoria = true;
+
+        statsAtualizar(hp, lvl, coins);
+
+        avisoDeFaltaDeNome.textContent = ""
+
+        } else if(nomeDoJogador == "") {
+
+            avisoDeFaltaDeNome.textContent = "Por favor informe um nome para jogar!"
+        }
     };
 
     // Execução da Inteligencia Central
@@ -276,8 +317,8 @@
 
             saidaHistoria.innerHTML = `
             ${saidaHistoriaAnterior}
-            <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao1}</p>
-            <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta1}</p>
+            <p class="mensagemJogador rodarAnimacao">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao1}</p>
+            <p class="mensagemSistema rodarAnimacao">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta1}</p>
             `
             saidaHistoriaAnterior += `
             <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao1}</p>
@@ -287,8 +328,8 @@
         } else if(opcaoSelecionada == 2) {
             saidaHistoria.innerHTML = `
             ${saidaHistoriaAnterior}
-            <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao2}</p>
-            <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta2}</p>
+            <p class="mensagemJogador rodarAnimacao">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao2}</p>
+            <p class="mensagemSistema rodarAnimacao">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta2}</p>
             `
             saidaHistoriaAnterior += `
             <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao2}</p>
@@ -298,8 +339,8 @@
         } else if(opcaoSelecionada == 3) {
             saidaHistoria.innerHTML = `
             ${saidaHistoriaAnterior}
-            <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao3}</p>
-            <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta3}</p>
+            <p class="mensagemJogador rodarAnimacao">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao3}</p>
+            <p class="mensagemSistema rodarAnimacao">${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].respostas.resposta3}</p>
             `
             saidaHistoriaAnterior += `
             <p class="mensagemJogador">${nomeDoJogador}: ${mensagens[historiaSelecionada].opcoes[idDoLinkSelecionado].opcao3}</p>
@@ -309,13 +350,81 @@
         } else if(opcaoSelecionada == "desistir") {
             saidaHistoria.innerHTML = `
             ${saidaHistoriaAnterior}
-            <p class="mensagemJogador">${nomeDoJogador}:  Desistir...</p>
-            <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[0].respostaDesistir}</p>
-            `
+            <p class="mensagemJogador rodarAnimacao">${nomeDoJogador}:  Desistir...</p>
+            <p class="mensagemSistema rodarAnimacao">${mensagens[historiaSelecionada].opcoes[0].respostaDesistir}</p>
+            <div class="resultadoFinal"><h3>Resultado Final:</h3>
+                <p id="hp">HP: ${hp}</p>
+                <p id="lvl">Level: ${lvl}</p>
+                <p id="coins">Coins: ${coins}</p>
+            </div>
+            `;
             saidaHistoriaAnterior += `
             <p class="mensagemJogador">${nomeDoJogador}:  Desistir...</p>
             <p class="mensagemSistema">${mensagens[historiaSelecionada].opcoes[0].respostaDesistir}</p>
+            <div class="resultadoFinal"><h3>Resultado Final:</h3>
+                <p id="hp">HP: ${hp}</p>
+                <p id="lvl">Level: ${lvl}</p>
+                <p id="coins">Coins: ${coins}</p>
+            </div>
             `;
+
+
+
+            // Créditos
+
+            creditosInner = `
+                <div class="creditos" id="creditos">
+                    <p class="credCriador">Criador: ${mensagens[historiaSelecionada].creditos.criador}</p>
+                    <p class="credDiretor">Diretor: ${mensagens[historiaSelecionada].creditos.diretor}</p>
+            `;
+            creditosInner += `
+                <p class="credImg">Imagens:</p>
+            `;
+            
+            for(let cont = 0; cont < mensagens[historiaSelecionada].creditos.imagens.length; cont++)  {
+                creditosInner += `
+                    <p class="cred">${mensagens[historiaSelecionada].creditos.imagens[cont]}</p>
+                `;
+            }
+            creditosInner += `
+                <p class="credMusic">Musicas:</p>
+            `;
+            for(let cont1 = 0; cont1 < mensagens[historiaSelecionada].creditos.imagens.length; cont1++)  {
+                creditosInner += `
+                    <p class="cred">${mensagens[historiaSelecionada].creditos.musicas[cont1]}</p>
+                `;
+            }
+            creditosInner += `
+                <p class="credAgr">Agradecimentos:</p>
+            `;
+            for(let cont2 = 0; cont2 < mensagens[historiaSelecionada].creditos.imagens.length; cont2++)  {
+                creditosInner += `
+                    <p class="cred">${mensagens[historiaSelecionada].creditos.agradecimentos[cont2]}</p>
+                `;
+            }
+            creditosInner += `
+                </div>
+            `;
+
+            saidaHistoria.innerHTML = `
+                ${saidaHistoriaAnterior}
+                ${creditosInner}
+            `;
+
+
+            // <div class="creditos">
+            //     <p>Criador:</p>
+            //     <p>Diretor:</p>
+            //     <p>Imagens:
+            //         <p></p>
+            //     </p>
+            //     <p>Musicas:
+            //         <p></p>
+            //     </p>
+            //     <p>Agradecimentos:
+            //         <p></p>
+            //     </p>
+            // </div>
         }
 
         if(opcaoSelecionada == 1) {
@@ -345,9 +454,14 @@
         } else if(opcaoSelecionada == "desistir") {
             opcoesDeEntrada.textContent = "";
             opcoesDeEntrada.innerHTML = `<a href="index.html" class="textoLink">Pagina Inicial</a>`;
+            stats.classList.add("esconder");
 
         }
         opcaoSelecionada = 0;
+
+
+        // Atualiza os Status do personagem;
+        statsAtualizar(hp, lvl, coins);
     };
 
     enviarOpcao.onclick = nucleoDeHistoria;
@@ -423,3 +537,4 @@
     // //         setInterval(playSound("./music/music5.mp3"), 51000)
     // //     }
     // // }
+    

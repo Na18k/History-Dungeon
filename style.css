@@ -1,8 +1,10 @@
 * {
-    font-family: 'Press Start 2P', cursive;
+    /* font-family: 'Press Start 2P', cursive; */
+    font-family: 'VT323', monospace;
+    font-size: 1.4em;
 }
 html {
-    font-family: 'Press Start 2P', cursive;
+    /* font-family: 'Press Start 2P', cursive; */
     background-color: black;
     color: white;
 }
@@ -76,15 +78,28 @@ header nav ul li a:hover {
     flex-direction: column;
     align-items: center;
 }
+select#selecionarHistoria {
+    background: rgb(99, 99, 99);
+}
 #selecionarHistoria, #nomeDoJogador,  #enviarHistoria {
     padding: 6px;
-    font-size: 1.1em;
+    font-size: 1.4em;
     outline: none;
     margin-top: 20px;
+    background: rgb(99, 99, 99);;
+}
+#avisoDeFaltaDeNome {
+    font-size: 1em;
+    margin-top: 10px;
+    color: rgb(252, 60, 60);
+}
+::placeholder {
+    color: rgb(53, 53, 53);
 }
 /* História */
 #nomeDaHistoria {
     font-size: 2em;
+    text-align: center;
 }
 .mensagemJogadorContainer, .mensagemSistemaContainer {
     display: flex;
@@ -92,13 +107,15 @@ header nav ul li a:hover {
     align-items: center;
 }
 .mensagemJogadorContainer div, .mensagemSistemaContainer div {
-    padding: 10px 0 10px 0;
+    padding: 10px 2px 8px 2px;
     width: 10%;
+    height: 70px;
     border: 2px solid white;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin: 0 10px 0 10px;
 }
 .mensagemJogadorContainer div img, .mensagemSistemaContainer div img {
     width: 64px;
@@ -110,18 +127,37 @@ header nav ul li a:hover {
 }
 .mensagemJogador {
     width: 90%;
-    font-size: 0.8em;
+    font-size: 1em;
     line-height: 1.4em;
 
     color: rgb(252, 252, 151);
     margin-top: 8px;
 }
 .mensagemSistema {
-    font-size: 0.8em;
+    font-size: 1em;
     line-height: 1.4em;
 
     color: lightgray;
     margin-top: 8px;
+}
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 6px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    margin-top: 4px;
+}
+#hp {
+    color: green;
+}
+#lvl {
+    color: purple;
+}
+#coins {
+    color: gold;
 }
 
 /* Opções */
@@ -155,9 +191,49 @@ header nav ul li a:hover {
     display: flex;
     justify-content: space-around;
 }
+.resultadoFinal {
+    border: 2px solid transparent;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* Creditos */
+
+.creditos {
+    margin-top: 10px;
+    text-align: center;
+    border: 4px double white;
+    line-height: 20px;
+}
+.creditos .cred {
+    font-size: 1em;
+}
+.credImg, .credMusic, .credAgr, .credCriador, .credDiretor {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MOBILE */
 @media(max-width: 768px) {
+    * {
+        font-size: 1em;
+    }
     header {
         margin-top: 20px;
     }
@@ -166,6 +242,7 @@ header nav ul li a:hover {
         width: 30%;
         margin: 0 10px 0 10px;
         align-items: center;
+        text-align: center;
     }
     h1 {
         text-align: center;
@@ -180,19 +257,60 @@ header nav ul li a:hover {
     #opcao1,
     #opcao2,
     #opcao3,
-    #opcao4 {
-        font-size: 0.7em;
+    #opcao4,
+    h3 {
+        font-size: 1em;
         line-height: 1.2em;
     }
     .descricao {
-        font-size: 0.6em;
+        font-size: 1em;
+    }
+    .audioControler {
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .audioControler button, .audioControler div {
+        width: 100%;
+    }
+
+    .mensagemJogadorContainer div {
+        width: 30%;
+        margin: 9px 9px 0 0px;
+    }
+    .mensagemSistemaContainer div {
+        width: 30%;
+        margin: 9px 0px 0 9px;
+    }
+    .mensagemSistemaContainer p, .mensagemJogadorContainer p {
+        text-align: justify;
+    }
+    .mensagemJogadorContainer div img, .mensagemSistemaContainer div img {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 4px;
+    }
+    .mensagemJogadorContainer div h2, .mensagemSistemaContainer div h2 {
+        font-size: 0.8em;
     }
 }
 
+.rodarAnimacao {
+    width: 100%;
+    animation: textoAnimado 2s steps(60, end); 
+}
 
-
-
-
+/* Animações */
+@keyframes textoAnimado {
+    0% {
+        opacity: 0%;
+        visibility: none;
+    }
+    100% {
+        opacity: 100%;
+        visibility: visible;
+    }
+}
 
 
 
