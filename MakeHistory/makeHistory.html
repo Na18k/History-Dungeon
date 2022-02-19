@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make History</title>
+
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="makeHistory.css">
+</head>
+<body>
+    <header>
+        <button id="buttonInicial">Inicial</button>
+        <button id="buttonBlocks">Opções</button>
+        <h1> | </h1>
+        <a href="../index.html">Voltar a History Dungeon</a>
+    </header>
+    <main>
+        <section class="section1" id="section1">
+            <div>
+                <h2>Informações Principais:</h2>
+                <p>Nome da História: </p><input type="text" id="nomeDaHistoria" placeholder="Nome da História">
+                <p>Autor: </p> <input type="text" id="autorNome" placeholder="Nome do Autor">
+                <p>Tempo Estimado: </p> <input type="time" id="tempoEstimado">
+                <p>Descrição: </p> <textarea id="descricaoDaHistoria" cols="30" rows="10" placeholder="Descrição da História"></textarea>
+                <p>Mensagem Inicial: </p> <textarea id="mensagemInicial" cols="30" rows="10"></textarea>
+            </div>
+            <div class="creditos">
+                <h2>Creditos:</h2>
+                <div>
+                    <p>Criado Por:</p> <input type="text" id="criadoPor">
+                </div>
+                <div>
+                    <p>Dirigido por:</p> <input type="text" id="dirigidoPor">
+                </div>
+                <p>Imagens: </p> <textarea id="imagensCred" cols="30" rows="5" placeholder="Coloque o nome dos criadores de imagem, separando-os com: '(,)virgula'"></textarea>
+                <p>Musicas:</p> <textarea id="musicasCred" cols="30" rows="5" placeholder="Coloque o nome dos criadores de músicas, separando-os com: '(,)virgula'"></textarea>
+                <p>Agradecimentos:</p> <textarea id="agradecimentosCred" cols="30" rows="5" placeholder="Coloque o nome para agradecimentos, separando-os com: '(,)virgula'"></textarea>
+            </div>
+        </section>
+        <section class="sectionBlocks esconder" id="section2">
+            <h2>Seção de Criação de Blocos</h2>
+            <div class="blocks">
+                <div id="bloco" class="bloco">
+                    <div class="blockHeader">
+                        <h3>Titulo do Bloco: <input type="text" id="tituloDoBloco"></h3> <h3>Link do Bloco: <input type="text" id="linkDoBloco"></h3>
+                    </div>
+                    <div class="optionBlock">
+                        <div class="optionBlockSection">
+                            <p>Opção 1:<input type="text" id="opcao1"></p>  <p>Npc:<input type="text" id="npc1"></p> 
+                        </div>
+                        <div class="optionBlockSection">
+                            <p>Resposta:<input type="text" id="resposta1"></p>  <p>Link para outra opção:<input type="text" id="linkOut1" maxlength="10"></p> 
+                        </div>
+                        <div class="blockStats">
+                            <p class="statsUni">HP- <input type="number" id="HPmenosLink1"></p>
+                            <p class="statsUni">HP+ <input type="number" id="HPmaisLink1"></p>
+                            <p class="statsUni">LVL- <input type="number" id="LVLmenosLink1"></p>
+                            <p class="statsUni">LVL+ <input type="number" id="LVLmaisLink1"></p>
+                            <p class="statsUni">Coins- <input type="number" id="menosLink1"></p>
+                            <p class="statsUni">Coins+ <input type="number" id="HPmaisLink1"></p>
+                            <p class="comandoStats">Comando: <input type="text" id="coman1"></p>
+                        </div>
+                        <hr>
+                        <div class="optionBlockSection">
+                            <p>Opção 2:<input type="text" id="opcao2"></p>  <p>Npc:<input type="text" id="npc2"></p> 
+                        </div>
+                        <div class="optionBlockSection">
+                            <p>Resposta:<input type="text" id="resposta2"></p>  <p>Link para outra opção:<input type="text" id="linkOut2" maxlength="10"></p> 
+                        </div>
+                        <div class="blockStats">
+                            <p class="statsUni">HP- <input type="number" id="HPmenosLink2"></p>
+                            <p class="statsUni">HP+ <input type="number" id="HPmaisLink2"></p>
+                            <p class="statsUni">LVL- <input type="number" id="LVLmenosLink2"></p>
+                            <p class="statsUni">LVL+ <input type="number" id="LVLmaisLink2"></p>
+                            <p class="statsUni">Coins- <input type="number" id="CoinsMenosLink2"></p>
+                            <p class="statsUni">Coins+ <input type="number" id="CoinsMaisLink2"></p>
+                            <p class="comandoStats">Comando: <input type="text" id="comando2"></p>
+                        </div>
+                        <hr>
+                        <div class="optionBlockSection">
+                            <p>Opção 3:<input type="text" id="opcao3"></p>  <p>Npc:<input type="text" id="npc3"></p> 
+                        </div>
+                        <div class="optionBlockSection">
+                            <p>Resposta:<input type="text" id="resposta3"></p>  <p>Link para outra opção:<input type="text" id="linkOut3" maxlength="10"></p> 
+                        </div>
+                        <div class="blockStats">
+                            <p class="statsUni">HP- <input type="number" id="HPmenosLink3"></p>
+                            <p class="statsUni">HP+ <input type="number" id="HPmaisLink3"></p>
+                            <p class="statsUni">LVL- <input type="number" id="LVLmenosLink3"></p>
+                            <p class="statsUni">LVL+ <input type="number" id="LVLmaisLink3"></p>
+                            <p class="statsUni">Coins- <input type="number" id="HPmenosLink3"></p>
+                            <p class="statsUni">Coins+ <input type="number" id="HPmaisLink3"></p>
+                            <p class="comandoStats">Comando: <input type="text" id="coman3"></p>
+                        </div>
+                        <hr>
+                        <div class="optionBlockSection">
+                            <p>Opção 4:<input type="text" id="opcao4"></p>  <p>Npc:<input type="text" id="npc4"></p> 
+                        </div>
+                        <div class="optionBlockSection">
+                            <p>Resposta:<input type="text" id="resposta4"></p>  <p>Link para outra opção:<input type="text" id="linkOut4" maxlength="10"></p> 
+                        </div>
+                        <div class="blockStats">
+                            <p class="statsUni">HP- <input type="number" id="HPmenosLink4"></p>
+                            <p class="statsUni">HP+ <input type="number" id="HPmaisLink4"></p>
+                            <p class="statsUni">LVL- <input type="number" id="LVLmenosLink4"></p>
+                            <p class="statsUni">LVL+ <input type="number" id="LVLmaisLink4"></p>
+                            <p class="statsUni">Coins- <input type="number" id="HPmenosLink4"></p>
+                            <p class="statsUni">Coins+ <input type="number" id="HPmaisLink4"></p>
+                            <p class="comandoStats">Comando: <input type="text" id="coman4"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section id="section3">
+            <button id="enviarBlock">Enviar Bloco</button>
+            <div>
+                <h2>Json File History</h2>
+                <textarea id="saidaJSON" cols="50" rows="40" placeholder="Aqui fica o Json para se criar a historia"></textarea>
+            </div>
+        </section>
+    </main>
+
+    <script src="makeHisyory.js" async defer></script>
+
+</body>
+</html>

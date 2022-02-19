@@ -111,11 +111,350 @@
             ]
         },
         historia2 = {
-            nomeDaHistoria : "História 2",
-            descricao: "Sem informações no momento, essa história é para teste!!!",
-            criador: "Kainan H.",
-            tempoEstimado: "0 segundos",
-            mensagemInicial : "Essa história ainda não existe:)",
+            nomeDaHistoria : "Exit",
+            descricao: "Exit é um game usado na serie 'Mr. Robot', no qual foi transcrito para aqui por Kainan H.",
+            criador: "WhiteRose",
+            tempoEstimado: "5 minutos",
+            mensagemInicial : "Você está preso numa masmorra com seu amigo, e vê um barril. O que você faz?",
+
+            creditos: {
+                criador: "Série Mr. Robot WitheRose",
+                diretor: "",
+                imagens: [],
+                musicas: [],
+                agradecimentos: [
+                    "Série Mr. Robot",
+                    "Kainan H. [ranscritor]"
+                ]
+            },
+
+            opcoes : [
+                desistir = {
+                    linkDaOpcao : 0,
+                    respostaDesistir: "Você desistiu da história, espero que possa achar outra interessante ao longo do caminho :)"
+                }, 
+                opcaoA1 = {
+                    linkDaOpcao: 1,
+
+                    opcao1 : "Olhar em volta.",
+                    opcao2 : "Mover o barril.",
+                    opcao3 : "Sentar ao lado do seu amigo.",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Você vê a mesma coisa, seu a migo e o barril na com você na masmora.",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 1,// Linkado com B1
+                        
+                        resposta2: "O barril rola para o lado você encontra um tunnel secreto.  O que você faz?",
+                        npc2: null,
+                        musica1: null,
+                        link2 : 3, // Linkado com B2
+    
+                        resposta3: "Seu amigo possui um bilhete na mão. O que você faz?",
+                        npc3: null,
+                        musica1: null,
+                        link3: 2, // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA2 = {
+                    linkDaOpcao: 2,
+
+                    opcao1 : "Ver o bilhete..",
+                    opcao2 : "Acender um fosforo.",
+                    opcao3 : "Voltar ao centro da masmorra",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Está muito escuro para ver o bilhete! O que você faz?",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 2,// Linkado com B1
+                        
+                        resposta2: 'O bilhete diz "Não me deixe aqui". Você deixa seu amigo ou fica?',
+                        npc2: null,
+                        musica1: null,
+                        link2 : 10, // Linkado com B2
+    
+                        resposta3: "Você voltou ao centro da masmora onde já estava. O que você faz?",
+                        npc3: null,
+                        musica1: null,
+                        link3: 1, // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA3 = {
+                    linkDaOpcao: 3,
+
+                    opcao1 : "Entrar no tunel.",
+                    opcao2 : "Sentar ao lado do seu amigo.",
+                    opcao3 : "Voltar o barril a posição inicial",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Você começa a fugir mas seu amigo está fraco de mais para ir com você. Ele te entrega um bilhete. O que você faz?.",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 4,// Linkado com B1
+                        
+                        resposta2: "Seu amigo possui um bilhete na mão. O que você faz?",
+                        npc2: null,
+                        musica1: null,
+                        link2 : 9, // Linkado com B2
+    
+                        resposta3: "Você volta o barril na posição inicial o que você faz?.",
+                        npc3: null,
+                        musica1: null,
+                        link3: 1, // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA4 = {
+                    linkDaOpcao: 4,
+
+                    opcao1 : "Ler o bilhete.",
+                    opcao2 : "Voltar para à masmorra.",
+                    opcao3 : "Continuar em frente",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Está escuro de mais para ler o bilhete. O que você faz?",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 5,// Linkado com B1
+                        
+                        resposta2: "Você volta para a masmora. O que você faz?",
+                        npc2: null,
+                        musica1: null,
+                        link2 : 3, // Linkado com B2
+    
+                        resposta3: "Você engatinha pelo tunel e sai numa praia. O que você faz?",
+                        npc3: null,
+                        musica1: null,
+                        link3: 6, // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA5 = {
+                    linkDaOpcao: 5,
+
+                    opcao1 : "Continuo em frente.",
+                    opcao2 : "Acender um fosforo.",
+                    opcao3 : "Voltar a masmora.",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Você engatinha pelo tunel e sai numa praia. O que você faz?",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 6,// Linkado com B1
+                        
+                        resposta2: "Está muito umido e com cheiro de gás no tunel, não seria uma boa ideia! O que você faz?.",
+                        npc2: null,
+                        musica1: null,
+                        link2 : 5, // Linkado com B2
+    
+                        resposta3: "Você volta para a masmora. O que você faz?",
+                        npc3: null,
+                        musica1: null,
+                        link3: 3, // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA6 = {
+                    linkDaOpcao: 6,
+
+                    opcao1 : "Observo.",
+                    opcao2 : "Voltar para trâs.",
+                    opcao3 : "Voltar a masmora.",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Você vê um barco na água. O que você faz??",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 7,// Linkado com B1
+                        
+                        resposta2: "Você volta ao tunnel no mesmo lugar de antes. O que você faz?",
+                        npc2: null,
+                        musica1: null,
+                        link2 : 4, // Linkado com B2
+    
+                        resposta3: "Você volta para a masmora. O que você faz?",
+                        npc3: null,
+                        musica1: null,
+                        link3: 3, // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA7 = {
+                    linkDaOpcao: 7,
+
+                    opcao1 : "Voltar ao tunnel.",
+                    opcao2 : "Ir para o barco.",
+                    opcao3 : "Voltar a masmora.",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Você volta ao tunnel no mesmo lugar de antes. O que você faz?",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 4,// Linkado com B1
+                        
+                        resposta2: "Parabéns, você está a caminho de um novo mundo. :) Quer jogar de novo?",
+                        npc2: null,
+                        musica1: null,
+                        link2 : 8, // Linkado com B2
+    
+                        resposta3: "Você volta para a masmora. O que você faz?",
+                        npc3: null,
+                        musica1: null,
+                        link3: 3, // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA8 = {
+                    linkDaOpcao: 8,
+
+                    opcao1 : "Jogar de novo.",
+                    opcao2 : "Desistir.",
+                    opcao3 : "Desistir.",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Você está preso numa masmorra com seu amigo, e vê um barril. O que você faz?",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 1,// Linkado com B1
+                        
+                        resposta2: "Você desistiu!",
+                        npc2: null,
+                        musica1: null,
+                        link2 : "desistir", // Linkado com B2
+    
+                        resposta3: "Você desistiu",
+                        npc3: null,
+                        musica1: null,
+                        link3: "desistir", // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA9 = {
+                    linkDaOpcao: 9,
+
+                    opcao1 : "...",
+                    opcao2 : "...",
+                    opcao3 : "...",
+                    opcao4 : "...",
+                    respostas: {
+                        resposta1: "Final Game...",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 9,// Linkado com B1
+                        
+                        resposta2: 'Final Game...',
+                        npc2: null,
+                        musica1: null,
+                        link2 : 9, // Linkado com B2
+    
+                        resposta3: "Final Game..",
+                        npc3: null,
+                        musica1: null,
+                        link3: 9, // Linkado com B3
+    
+                        resposta4: "Final Game...",
+                        npc4: null,
+                        musica1: null,
+                        link4: 9, // Linkado com Desistir
+    
+                    },
+                },
+                opcaoA10 = {
+                    linkDaOpcao: 10,
+
+                    opcao1 : "Fica.",
+                    opcao2 : "Deixe-o aqui!",
+                    opcao3 : "Voltar ao centro da masmorra",
+                    opcao4 : "Desistir desta história.",
+                    respostas: {
+                        resposta1: "Seu amigo agradeçe :) ............",
+                        npc1: null,
+                        musica1: null,
+                        hp: 0,
+                        lvl: 0,
+                        link1 : 9,// Linkado com B1
+                        
+                        resposta2: 'Você move o barril, e segue pelo tunel secreto, chegando a uma praia onde há um barco, e você o pega e vai para o novo mundo.',
+                        npc2: null,
+                        musica1: null,
+                        link2 : 8, // Linkado com B2
+    
+                        resposta3: "Você voltou ao centro da masmora onde já estava. O que você faz?",
+                        npc3: null,
+                        musica1: null,
+                        link3: 1, // Linkado com B3
+    
+                        resposta4: "desistiu da História",
+                        npc4: null,
+                        musica1: null,
+                        link4: "desistir", // Linkado com Desistir
+    
+                    },
+                },
+                
+            ]
         }
     ];
 
