@@ -1,0 +1,238 @@
+{
+	"historias" : [
+
+		{ // Historia 0
+			"nomeDaHistoria" : "Historia Teste",
+			"descricao" : "Sem informações no momento",
+			"criador" : "Kainan H.",
+			"tempoEstimado" : "sem informações",
+			"mensagemInicial" : ":)",
+			"bannerDaHistoria":"img/insoniaEValacia/logo.png",
+			"audio" : true,
+			"guia" : true,
+			"hp": 200,
+			"lvl": 0,
+			"coins": 0,
+			"mana" : 0,
+			"batalhas" : true,
+			"musica" : true,
+			"creditos" : {
+				"principal" : [
+					{
+						"contribuicao" : "Criador",
+						"pessoa" : "Kainan H."
+					}
+				],
+				"imagens": [
+					{
+						"contribuicao" : "Steve",
+						"pessoa" : "Kainan H."
+					},
+				],
+				"music" : [
+					{
+						"contribuicao" : "Todas as Músicas",
+						"pessoa" : "Nã18 (Kainan H.)"
+					},
+				],
+				"agradecimentos" : [
+					{
+						"contribuicao" : "Ideias geniais",
+						"pessoa" : "Vic"
+					},
+				]
+			},
+			"playlistMusicas" : [
+				{
+					"nomeDaMusica" : "Vale dos Zoglins",
+					"local" : "./music/insoniaEValacia/valeDosZoglins.mp3"
+				},
+				{
+					"nomeDaMusica" : "Dança das Aranhas",
+					"local" : "./music/insoniaEValacia/dancaDasAranhas.mp3"
+				},
+				{
+					"nomeDaMusica" : "Música do Woodiks",
+					"local" : "./music/insoniaEValacia/musicaDoWoodiks.mp3"
+				},
+				{
+					"nomeDaMusica" : "Music 8",
+					"local" : "./music/insoniaEValacia/music8.mp3"
+				},
+				{
+					"nomeDaMusica" : "Música do Palacio de Valácia",
+					"local" : "./music/insoniaEValacia/musicaDoPalaciodeValacia.mp3"
+				},
+				{
+					"nomeDaMusica" : "Música do Rei de Insônia",
+					"local" : "./music/insoniaEValacia/musicaDoReiDeInsonia.mp3"
+				},
+				{
+					"nomeDaMusica" : "Flauta de Slov",
+					"local" : "./music/insoniaEValacia/flautaDeSlov.mp3"
+				},
+				{
+					"nomeDaMusica" : "Music 11",
+					"local" : "./music/insoniaEValacia/music11.mp3"
+				},
+				{
+					"nomeDaMusica" : "Music 12",
+					"local" : "./music/insoniaEValacia/music12.mp3"
+				},
+				{
+					"nomeDaMusica" : "Music 13",
+					"local" : "./music/insoniaEValacia/music13.mp3"
+				},
+				{
+					"nomeDaMusica" : "Music 14",
+					"local" : "./music/insoniaEValacia/music14.mp3"
+				},
+
+			],
+			"batalha": {
+				"personagem" : {
+					"ataque": [
+						{
+							"nomeDoAtaque" : "Normal",
+							"informacoes" : "",
+							"dano" : 10,
+							"custoMana" : 0,
+							"som" : "../music/insoniaEValacia/effects/dano.mp3",
+							"animacao": "pisca"
+						},
+						{
+							"nomeDoAtaque" : "Mágico",
+							"informacoes" : "",
+							"dano" : 20,
+							"custoMana" : 10,
+							"som" : "../music/insoniaEValacia/effects/magico.mp3",
+							"animacao": "magico1"
+						}
+					],
+					"acao" : [
+						{
+							"nomeDaAcao": "Conversar",
+							"informacoes" : "",
+							"custoMana" : 0,
+							"lvl" : 0,
+							"entrada" : "Você tenta conversar",
+							"tipo" : "conversa"
+						},
+						{
+							"nomeDaAcao": "Fugir",
+							"informacoes" : "",
+							"custoMana" : 0,
+							"lvl" : "-1",
+							"entrada" : "Você tenta fugir",
+							"tipo" : "fuga"
+						}
+					]
+				},
+				"inimigos" : [
+					{
+						"id" : 0,
+						"nomeDoInimigo": "O rei da Morte",
+						"informacoes" : "",
+						"hp": 200,
+						"imagem" : "../img/banner.png",
+						"ataques" : [
+							{
+								"nome": "Dano Físico",
+								"dano" : 10,
+								"animacao" : "piscar1"
+							},
+							{
+								"nome": "Magia Sombria",
+								"dano" : 30,
+								"animacao" : "magico2"
+							}
+						],
+						"cmd" : ""
+					},
+					{
+						"id" : 1,
+						"nomeDoInimigo": "Mago",
+						"informacoes" : "",
+						"hp": 200,
+						"imagem" : "../img/banner.jpg",
+						"ataques" : [
+							{
+								"nome": "Magia Sombria",
+								"dano" : 30,
+								"animacao" : "magico2"
+							}
+						],
+						"cmd" : ""
+					}
+				]
+			},
+			"links_e_opcoes_da_historia" : [
+				{
+					"linkDaOpcao" : 0
+				},
+				{
+					"linkDaOpcao" : 1,
+					"opcoes" : [
+						{
+							"opcao" : "",
+							"resposta": "",
+							"link" : 1,
+							"banner" : "",
+							"npc": "",
+							"stats": {
+								"hp": "0", // '-(N)' ou '(N)'
+								"lvl": "0", // '-(N)' ou '(N)'
+								"coins": "0", // '-(N)' ou '(N)'
+								"mana": "0", // '-(N)' ou '(N)'
+							},
+							"cmd": [""]
+						},
+						{
+							"opcao" : "",
+							"resposta": "",
+							"link" : 1,
+							"banner" : "",
+							"npc": "",
+							"stats": {
+								"hp": "0", // '-(N)' ou '(N)'
+								"lvl": "0", // '-(N)' ou '(N)'
+								"coins": "0", // '-(N)' ou '(N)'
+								"mana": "0", // '-(N)' ou '(N)'
+							},
+							"cmd": []
+						},
+						{
+							"opcao" : "",
+							"resposta": "",
+							"link" : 1,
+							"banner" : "",
+							"npc": "",
+							"stats": {
+								"hp": "0", // '-(N)' ou '(N)'
+								"lvl": "0", // '-(N)' ou '(N)'
+								"coins": "0", // '-(N)' ou '(N)'
+								"mana": "0", // '-(N)' ou '(N)'
+							},
+							"cmd": []
+						},
+						{
+							"opcao": "Desistir desta história.", 
+							"resposta": "...",
+							"link" : 0,
+							"banner" : "",
+							"npc": "",
+							"stats": {
+								"hp": "0", // '-(N)' ou '(N)'
+								"lvl": "0", // '-(N)' ou '(N)'
+								"coins": "0", // '-(N)' ou '(N)'
+								"mana": "0", // '-(N)' ou '(N)'
+							},
+							"cmd": []
+						}
+					]
+				}
+			]
+		}
+	
+	]
+}

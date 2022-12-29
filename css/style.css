@@ -1,0 +1,631 @@
+* {
+    font-family: 'VT323', monospace;
+    font-size: 1.4em;
+}
+html {
+    background-color: black;
+    color: white;
+    font-family: 'VT323', monospace;
+}
+body {
+    padding: 0 10px;
+}
+main {
+    background-image: url("../img/historyDungeon/background.png");
+    /*background-repeat: repeat;*/
+    /*animation: anim-bck 20s linear infinite;*/
+}
+button {
+    border: none;
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: rgb(0 0 0 / 0%);
+    color: rgb(255 255 255);
+    border: 2px double rgb(211 211 211 / 16%);
+}
+@keyframes anim-bck {
+    0% {
+        background-position: initial;
+    }
+    99.9% {
+        background-position: 5em;
+    }
+    100% {
+        background-position: initial;
+    }
+}
+
+.fixado {
+    position: fixed;
+}
+.aviso {
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.8em;
+}
+.aviso p {
+    text-align: center;
+    background-image: linear-gradient(black 70%, transparent);
+    padding: 10px;
+    width: 100%;
+}
+.informacoesDaHistoria {
+    border: 2px dashed white;
+    padding: 2px;
+    display: flex;
+}
+.bannerDaHistoria {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2px;
+}
+.bannerDaHistoria img {
+    width: 90%;
+    border: 1px solid white;
+}
+.descricaoContainer {
+    width: 60%;
+}
+.descricao {
+    color: lightgray;
+    margin: 4px;
+}
+.descricao:before {
+    content: "| ";
+}
+.textoLink {
+    color: purple;
+    font-size: 0.8em;
+    text-decoration: none;
+    text-align: center;
+    margin: 20px 0 10px 0;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+}
+.textoLink:hover {
+    color: rebeccapurple;
+}
+
+
+/* Header */
+header {
+    padding: 8px;
+}
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+header nav ul li {
+    list-style: none;
+    padding: 4px;
+}
+header nav ul li a {
+    color: purple;
+    font-size: 0.8em;
+    text-decoration: none;
+    text-align: center;
+}
+header nav ul li a:hover {
+    color: rebeccapurple;
+}
+.ajudarProjeto {
+    border: 2px solid gold;
+/*    animation: animaGold 10s infinite;*/
+}
+@keyframes animaGold {
+    0% {border-color: gold;}
+    20% {border-color: purple;}
+    40% {border-color: blue;}
+    60% {border-color: red;}
+    80% {border-color: green;}
+    100% {border-color: gold;}
+}
+
+
+/* selecionar História */
+.sectionCarregarGame {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    /*box-shadow: 2px 2px 8px purple;*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+h6 {
+    font-size: 1.4em;
+    color: purple;
+    text-align: center;
+}
+#informacoesSaveGame {
+    /*border: 2px solid red;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 20px;
+}
+#informacoesSaveGame div {
+    /*border: 1px solid white;*/
+    padding: 10px;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
+/*#informacoesSaveGame div:before {
+    content: "-------------"
+}*/
+.carregarGameOption {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+
+
+
+.selecionadorDeHistoria {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+select#selecionarHistoria {
+    background-color: rgb(0 0 0);
+    color: white;
+    font-size: 0.8em;
+}
+#selecionarHistoria, #nomeDoJogador,  #enviarHistoria {
+    border: none;
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: rgb(0 0 0 / 0%);
+    color: rgb(255 255 255);
+    border: 2px double rgb(211 211 211 / 16%);
+}
+#avisoDeFaltaDeNome, .avisoText {
+    font-size: 1em;
+    margin-top: 10px;
+    color: rgb(252, 60, 60);
+}
+::placeholder {
+    color: rgb(53, 53, 53);
+}
+/*Mensagem Inbox*/
+#msgInbox {
+    width: 97%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 3px;
+    position: fixed;
+}
+.animationMsgInbox {
+    animation: animationMsgInbox 15s ease;
+}
+#msgInbox div {
+    width: 50%;
+    padding: 6px;
+    border: 1px solid purple;
+    background: black;
+    opacity: 0%;
+    visibility: none;
+}
+#msgInbox div h4 {
+    font-size: 1.4em;
+    color: lightgreen;
+}
+
+
+
+/* História */
+#nomeDaHistoria {
+    font-size: 2em;
+    text-align: center;
+}
+.mensagemJogadorContainer, .mensagemSistemaContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mensagemJogadorContainer div, .mensagemSistemaContainer div {
+    padding: 10px 2px 8px 2px;
+    width: 10%;
+    height: 70px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px 0 10px;
+}
+.mensagemJogadorContainer div img, .mensagemSistemaContainer div img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 4px;
+}
+.mensagemJogadorContainer div h2, .mensagemSistemaContainer div h2 {
+    font-size: 0.6em;
+}
+.mensagemJogador {
+    width: 90%;
+    font-size: 1em;
+    line-height: 1.4em;
+
+    color: rgb(252, 252, 151);
+    margin-top: 8px;
+}
+.mensagemSistema {
+    font-size: 1em;
+    line-height: 1.4em;
+
+    color: lightgray;
+    margin-top: 8px;
+}
+.bannerContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4px;
+}
+.banner {
+    width: 98%;
+    height: 400px;
+    object-fit: cover;
+    border: 1px double white;
+}
+
+
+
+
+/*BATALHA*/
+.batalha {
+    border: 2px solid yellow;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quadroDeBatalha {
+    width: 200px;
+    height: 200px;
+    border: 2px double rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.quadroDeBatalha img {
+    width: 80%;
+}
+.opcoesDeBatalha button {
+    width: 200px;
+    font-size: 1em;
+}
+.opcoesDeBatalha button:hover {
+    border-color: yellow;
+}
+.optionsBatalhaDetalhe {
+    width: 80%;
+    height: 160px;
+    margin-left: 10px;
+    border: 2px dashed white;
+    padding: 10px;
+}
+.optionsBattleBorder {
+    animation: optionsBattleBorder 0.4s infinite;
+}
+.optionsBattleBorder:after {
+    content: ' ==>'
+}
+@keyframes optionsBattleBorder {
+    0% {border-color: transparent;}
+    50% {border-color: white;}
+    100% {border-color: transparent;}
+}
+.opcoesDeBatalha {
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid white;
+    padding: 10px 10px 10px 10px;
+}
+.opcoesBatalha {
+    width: 20%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.opcoesBatalha {
+    width: 33%;
+}
+.sectionStatsBatalha {
+    width: 95%;
+}
+
+
+
+
+
+
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 6px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    margin-top: 4px;
+}
+#hp, #hpSave {
+    color: green;
+}
+#lvl, #lvlSave {
+    color: purple;
+}
+#coins, #coinsSave {
+    color: gold;
+}
+#mana, #manaSave {
+    color: lightblue;
+}
+
+/* Opções */
+.opcoesDeEntrada {
+    display: flex;
+    flex-direction: column;
+}
+.opcoesDeEntrada button {
+    border: none;
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: transparent;
+    color: white;
+    border: 2px double rgba(211, 211, 211, 0.159);
+}
+#enviarOpcao {
+    color: green;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.opcoesDeEntrada button:hover {
+    border-color: white;
+}
+.opcoesDeEntrada button:active {
+    border-color: yellow;
+}
+
+.botaoEnviarContainer {
+    display: flex;
+    justify-content: space-around;
+}
+.resultadoFinal {
+    border: 2px solid transparent;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* Creditos */
+.fimDeGame {
+    border-top: 1px solid white;
+}
+
+.creditos {
+    margin-top: 10px;
+    text-align: center;
+    border: 4px double white;
+    line-height: 20px;
+    padding: 20px;
+}
+.creditos .cred {
+    font-size: 1em;
+}
+.credImg, .credMusic, .credAgr, .credCriador, .credDiretor {
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 0px 8px 0px;
+}
+
+
+.sectionDeConfirmacaoDesistir {
+    width: 98%;
+    height: 97%;
+    position: fixed;
+    display: flex;
+    padding: 10px 0 10px 0;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0,0,0, 0.9);
+}
+h5 {
+    font-size: 1.4em;
+    color: red;
+}
+.avisoDesistir {
+    border: 1px solid white;
+    text-align: center;
+    width: 80%;
+    background: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.escolhaContainer {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.escolhaContainer button, .carregarGameOption button {
+    border: none;
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: rgb(0 0 0 / 0%);
+    color: rgb(255 255 255);
+    border: 2px double rgb(211 211 211 / 16%);
+}
+#escolhaNao {
+    color: green;
+}
+#escolhaNao:hover {
+    border-color: green;
+}
+#escolhaSim {
+    color: red;
+}
+#escolhaSim:hover {
+    border-color: red;
+}
+
+
+/*FOOTER*/
+
+footer {
+    width: 98%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    border-top: 1px solid white;
+    padding: 10px 0 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MOBILE */
+@media(max-width: 768px) {
+    * {
+        font-size: 1em;
+    }
+    header {
+        margin-top: 20px;
+        border-bottom: 1px solid white;
+    }
+    nav ul li {
+        width: 20%;
+        margin: 10px 10px 0 10px;
+        align-items: center;
+        text-align: center;
+        font-size: 1.2em;
+    }
+    h1 {
+        text-align: center;
+    }
+    #selecionarHistoria, #nomeDoJogador {
+        width: 98%;
+    }
+    .mensagemJogador,
+    .mensagemSistema,
+    #enviarOpcao,
+    .opcoesDeEntrada,
+    #opcao1,
+    #opcao2,
+    #opcao3,
+    #opcao4,
+    h3 {
+        font-size: 1em;
+        line-height: 1.2em;
+    }
+    .descricao {
+        font-size: 1em;
+    }
+    .audioControler {
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .audioControler button, .audioControler div {
+        width: 100%;
+    }
+
+    .mensagemJogadorContainer div {
+        width: 30%;
+        margin: 9px 9px 0 0px;
+    }
+    .mensagemSistemaContainer div {
+        width: 30%;
+        margin: 9px 0px 0 9px;
+    }
+    .mensagemSistemaContainer p, .mensagemJogadorContainer p {
+        text-align: justify;
+    }
+    .mensagemJogadorContainer div img, .mensagemSistemaContainer div img {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 4px;
+    }
+    .mensagemJogadorContainer div h2, .mensagemSistemaContainer div h2 {
+        font-size: 0.8em;
+    }
+}
+
+.rodarAnimacao {
+    width: 100%;
+    animation: textoAnimado 2s steps(60, end); 
+}
+
+/* Animações */
+@keyframes textoAnimado {
+    0% {
+        opacity: 0%;
+        visibility: none;
+    }
+    100% {
+        opacity: 100%;
+        visibility: visible;
+    }
+}
+@keyframes animationMsgInbox {
+    0% {
+        opacity: 0%;
+        visibility: none;
+    }
+    10% {
+        opacity: 100%;
+        visibility: visible;
+    }
+    90% {
+        opacity: 100%;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0%;
+        visibility: none;
+    }
+}
+
+/* Alto nível de prioridade */
+.esconder {
+    display: none !important;
+    visibility: none !important;
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>History Dungeon</title>
+        <meta name="description" content="Um sistema de Histórias de varios finais, inspirados em AI Dungeon, e demais jogos de Navegador">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="img/historyDungeon/favicon.png">
+        <!-- Imports -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+        <!-- Style -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="audioControler/audioControler.css">
+        <link rel="stylesheet" href="css/animationBattle.css">
+    </head>
+    <body>
+        <div class="aviso">
+            <p class="fixado">A história será salva em CACHE!</p>
+        </div>
+        <header>
+            <!-- <img src="img/favicon.png" alt="" class="logoHistoryDungeon"> -->
+            <nav>
+                <ul>
+                    <li><a href="#" target="_blank">Pagina Sobre</a></li>
+                    <li><a href="https://github.com/Na18k/History-Dungeon" target="_blank">Fonte</a></li>
+                    <li><a href="https://github.com/Na18k" target="_blank">Criador</a></li>
+                    <li class="ajudarProjeto"><a href="https://apoia.se/historydungeon" target="_blank" >Ajudar Projeto</a></li>
+                </ul>
+            </nav>
+
+
+        </header>
+        <main>
+                        
+            
+            <!-- --------------------------------- -->
+            
+            
+            <section id="sectionCarregarGame" class="sectionCarregarGame esconder">
+                <h6>Você possui uma história salva em seu CACHE!</h6>
+                <p>você quer carrega-la?</p>
+                <div id="informacoesSaveGame">
+                    <div>
+                        <h6>História:</h6>
+                        <p id="historiaSave">Nehuma Selecionada</p>
+                    </div>
+                    <div>
+                        <h6>Stats:</h6>
+                        <p id="hpSave">0</p>
+                        <p id="lvlSave">0</p>
+                        <p id="coinsSave">0</p>
+                        <p id="manaSave">0</p>
+                    </div>
+                    <div>
+                        <h6>Nome do jogador:</h6>
+                        <p id="nameSave">Nenhum</p>
+                    </div>
+                    <div>
+                        <h6>Ultimo Link:</h6>
+                        <p id="linkSave">0</p>
+                    </div>
+                    
+                </div>
+                <div class="carregarGameOption">
+                    <button id="carregarGameOptionSim">Sim :)</button>
+                    <button id="carregarGameOptionNewHistory">Nova História</button>
+                </div>
+            </section>
+
+
+            <!-- --------------------------------- -->
+
+
+            <section id="sectionEscolherHistoria" class="aparecer"> 
+                <div id="selecionadorDeHistoria" class="selecionadorDeHistoria">
+                    <select id="selecionarHistoria">
+                        <option value="0">1 | Valácia e Insônia</option>
+                        <option value="1">2 | Exit</option>
+                    </select>
+                    <input id="nomeDoJogador" type="text" placeholder="Nome Do Jogador" maxlength="20">
+                    <!-- value="Steve [O Jogador]" -->
+
+                    <p id="avisoDeFaltaDeNome"></p>
+                    <button id="enviarHistoria">Selecionar</button>
+                </div>
+            </section>
+            <section id="msgInbox" class="esconder">
+                <div class="animationMsgInbox">
+                    <h4 id="msgTitulo"><!-- Bem-Vindo --></h4>
+                    <p id="msgMensagem"><!-- Espere que você goste desta história :) --></p>
+                </div>
+            </section>
+
+            
+            <!-- --------------------------------- -->
+            
+            
+            <section id="sectionDeConfirmacaoDesistir" class="sectionDeConfirmacaoDesistir esconder">
+                <div class="avisoDesistir">
+                    <h5>Você tem certeza que quer desistir?</h5>
+                    <p class="avisoText">Isso apagará o save da hitória e você NÃO poderá mais voltar a jogar!</p>
+                    <div class="escolhaContainer">
+                        <button id="escolhaNao">Não</button><button id="escolhaSim">Sim</button>
+                    </div>
+                </div>
+            </section>
+
+            
+            <!-- --------------------------------- -->
+            
+            
+            <section id="sectionHistoria" class="esconder">
+                <h1 id="nomeDaHistoria">História 1</h1>
+                <div id="saidaHistoria">
+                    <!-- <div class="mensagemSistemaContainer">
+                        <div>
+                            <img src="img/personagens/desconhecido.png" alt="">
+                            <h2>Desconhecido</h2>
+                        </div>
+                        <p class="mensagemSistema">Olá históriador :)</p>
+                    </div>
+                    <p class="mensagemJogador">Olá</p> -->
+                    
+                </div>
+            </section>
+            <!-- <section class="batalha">
+                <h6 id="nomeDoInimigo">Nome do Inimigo</h6>
+                <h2 id="vidaInimigo">VIDA: </h2>
+                <div class="quadroDeBatalha" id="quadroDeBatalha">
+                    
+                    <img src="img/historyDungeon/favicon.png" id="inimigoImagem" class="inimigoImagem">
+                </div>
+                <section class="sectionStatsBatalha">
+                <div class="stats" id="stats">
+                    <p id="hp">HP:</p>
+                    <p id="mana">Mana: </p>
+                </div>
+            </section>
+                <div class="opcoesDeBatalha">
+                    <div class="opcoesBatalha">
+                        <button id="ataque" class="optionsBattleBorder">Ataque</button>
+                        <button id="acao">Ação</button>
+                        <button id="usarItem">Usar item</button>
+                        <button id="enviarBatalha">Enviar ==></button>
+                    </div>
+                    <div class="optionsBatalhaDetalhe">
+                        <div id="ataqueOptions" class="">
+                            <button>Normal</button>
+                            <button>Mágico</button>
+                            <div id="infoBatalhas">
+                                <h5>Normal</h5>
+                                <p>Esse ataque dá um dano fisico de 10</p>
+                            </div>
+                        </div>
+                        <div id="acaoOptions" class="esconder">
+                            <button>Conversar</button>
+                            <button>Fugir</button>
+                        </div>
+                        <div id="usarItemOptions" class="esconder">
+                            <h6>Não Dispónivel</h6>
+                        </div>
+                    </div>
+                </div>
+                
+            </section> -->
+
+            <!-- <div class="informacoesDaHistoria">
+                <div class="bannerDaHistoria">
+                    <img src="img/banner.png" alt="Banner da Historia ${}">
+                </div>
+                <div class="descricaoContainer">
+                    <p class="descricao">Descrição: ${dados.historias[numeroDaHistoriaSelecionada].descricao}</p>
+                    <p class="descricao">Criado por: ${dados.historias[numeroDaHistoriaSelecionada].criador}</p>
+                    <p class="descricao">Tempo estimado: ${dados.historias[numeroDaHistoriaSelecionada].tempoEstimado}</p>
+                    <br>
+                    <p class="mensagemSistema rodarAnimacao">${dados.historias[numeroDaHistoriaSelecionada].mensagemInicial}</p>
+                </div>
+            </div> -->
+                        
+            
+            <!-- --------------------------------- -->
+            
+            
+            <section id="sectionStats" class="esconder">
+                <div class="stats" id="stats">
+                    <p id="hp">HP:</p>
+                    <p id="lvl">Level:</p>
+                    <p id="coins">Coins:</p>
+                    <p id="mana">Mana: </p>
+                </div>
+            </section>
+                        
+            
+            <!-- --------------------------------- -->
+            
+            
+            <section id="sectionOpcoes" class="esconder">
+                <div id="opcoesDeEntrada" class="opcoesDeEntrada">
+                    <button id="opcao1">Opção 1</button>
+                    <button id="opcao2">Opção 2</button>
+                    <button id="opcao3">Opção 3</button>
+                    <button id="opcao4">Opção 4</button>
+                    <button id="enviarOpcao"><p>Enviar :)</p><p id="opcaoSelecionadaMostrar">Opção selecionada: 1</p></button>
+                <div>
+            </section>
+                        
+            
+            <!-- --------------------------------- -->
+            
+            
+            <section id="sectionAudio" class="esconder">
+                <button id="audioControlerButton">Audio Controler (Menu)</button>
+                <div class="audioControlerContainer audioControlerEsconder" id="audioControlerContainer">
+                    <h3 class="tituloDaMusica" id="tituloDaMusica">Audio</h3>
+                    <div class="audioControler">
+                        <audio id="audioMusica" src=""></audio>
+                        <button id="audioMusicaPlay">Play</button>
+                        <button id="audioMusicaPause">Pause</button>
+                        <button id="audioMusicaLoop">Loop (Sim)</button>
+                        <!-- <button id="muteMusica">Mute (Não)</button> -->
+                        <div class="volumeControlerContainer">
+                            <p>Volume:</p>
+                            <input type="range" name="volumeControler" id="volumeControler" min="0" max="10">
+                        </div>
+                        <button id="mudarMusica">Próxima => </button>
+                    </div>
+                </div>
+            </section>
+                        
+            
+            <!-- --------------------------------- -->
+            
+            
+        </main>
+        <footer>
+            <p>History Dungeon</p>
+            <p>Created By Kainan H.</p>
+            <p>Copyright 2022</p>
+
+        </footer>
+        
+        <!-- Scripts -->
+
+        <script src="js/script.js" async defer></script>        
+        <!-- <script src="audioControler/audioControler.js"></script> -->
+    </body>
+</html>
