@@ -1,6 +1,4 @@
 # ![favicon](https://user-images.githubusercontent.com/75281033/166167938-ea809d0d-b1b3-4737-a76d-532e421948c4.png) History-Dungeon
-## Aguardando v0.2.0-BETA !!!!
-
 <hr>
 <div align="center">
   Fonte: WakaTime
